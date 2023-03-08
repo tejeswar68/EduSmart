@@ -25,12 +25,17 @@ export const createCourse = async (req,res,next)=>
 
     try {
         existingUser = await User.findById(creator);
+        console.log(existingUser);
     } catch (error) {
         return console.log(error);
     }
     if(!existingUser)
     {
         return res.status(400).json({message :"Unable to Find User By this Id"});
+    }
+    if(existingUser.user.classrooms.length>=4)
+    {
+        return res.status(404).json({message:"YOU CANNOT CREATE COURSES MORE THAN 4!!"});
     }
     const course = new Course({
         title,
@@ -67,12 +72,16 @@ export const joinCourse = async (req,res,next)=>
         existingCourse = await Course.findById(courseId);
         existingUser = await User.findById(userId);
         enrolledUser = await existingCourse.users.includes(userId);
-        
+        console.log(enrolledUser)
       
     } catch (error) {
         return console.log(error);
     }
 
+    if(existingUser.classrooms.length >= 4)
+    {
+        return res.status(400).json({message:"YOU CANNOT ENROLL MORE THAN 4 ACTIVE COURSES!"});
+    }
     if(existingCourse.users.length>=existingCourse.capacity)
     {
         return res.status(404).json({message:"STUDYSESSION CAPACITY IS FULL"})

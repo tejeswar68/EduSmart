@@ -16,12 +16,14 @@ const MainClassroom = () => {
   const [userDetails, setUserDetails] = useState();
   const userId = localStorage.getItem("userId");
   const userType = localStorage.getItem("userType");
+  const[length,setlength] = useState(0);
 
   async function getUserDetails() {
-    const { data } = await axios.get(
+     const {data} = await axios.get(
       `http://localhost:5000/api/${userType}/${userId}`
     );
     setUserDetails(data.user)
+    setlength(data.user.classrooms.length)
     console.log(data);
   }
   
@@ -30,10 +32,12 @@ const MainClassroom = () => {
   }, []);
 
   console.log(userDetails)
+  console.log(length)
+  // console.log(userDetails.classrooms);
   return (
     <div className='container'>
       <div>
-      {userType === "faculty" && <Button onClick={()=>navigate("/addclass")} >Add Classroom</Button> }  
+      {userType === "faculty"&& length<=3 &&<Button onClick={()=>navigate("/addclass")} >Add Classroom</Button> }  
       </div>
       <Row>
         {userDetails && userDetails.classrooms.map((item,index) => (

@@ -40,7 +40,7 @@ const CardClassroom = ({ classroomId }) => {
 return (
 <div className='container'>
       {faculty && (classroom &&
-        <div className="card">
+        <div className="card m-4">
           <div className="card-header display-7">
             {classroom.title}
           </div>
