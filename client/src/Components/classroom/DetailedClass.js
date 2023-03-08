@@ -14,7 +14,7 @@ function DetailedClass() {
   console.log(id);
   const [classs, setClass] = useState([]);
   const sendRequest = async () => {
-    const res = await axios.get(`http://localhost:5000/api/class/${id}`)
+    const res = await axios.get(`https://edusmart.herokuapp.com/api/class/${id}`)
       .catch(err => console.log(err))
     const data = res.data;
     console.log(data.class);

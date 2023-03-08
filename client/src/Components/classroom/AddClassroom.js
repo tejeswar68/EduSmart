@@ -20,7 +20,7 @@ function AddClassroom() {
         {
             isLoading(true);
             var userId = localStorage.getItem("userId")
-            const res = await axios.post(`http://localhost:5000/api/class/addclass/${userId}`,
+            const res = await axios.post(`https://edusmart.herokuapp.com/api/class/addclass/${userId}`,
             {
                 title:obj.title,
                 subject:obj.subject,

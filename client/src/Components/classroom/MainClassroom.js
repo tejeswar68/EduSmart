@@ -20,7 +20,7 @@ const MainClassroom = () => {
 
   async function getUserDetails() {
      const {data} = await axios.get(
-      `http://localhost:5000/api/${userType}/${userId}`
+      `https://edusmart.herokuapp.com/api/${userType}/${userId}`
     );
     setUserDetails(data.user)
     setlength(data.user.classrooms.length)

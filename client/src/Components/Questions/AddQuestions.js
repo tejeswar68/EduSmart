@@ -21,7 +21,7 @@ function AddQuestions() {
         {
             isLoading(true);
             var userId = localStorage.getItem("userId")
-            const res = await axios.post(`http://localhost:5000/api/test/addquestion`,
+            const res = await axios.post(`https://edusmart.herokuapp.com/api/test/addquestion`,
             {
                 question:obj.question,
                 option1 : obj.option1,

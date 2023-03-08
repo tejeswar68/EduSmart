@@ -11,14 +11,14 @@ const CardClassroom = ({ classroomId }) => {
 
   async function getFaculty(id) {
     const { data } = await axios.get(
-      `http://localhost:5000/api/faculty/${id}`
+      `https://edusmart.herokuapp.com/api/faculty/${id}`
     );
     setFaculty(data.user)
   }
 
   async function getClassroom(id) {
     const { data } = await axios.get(
-      `http://localhost:5000/api/class/${id}`
+      `https://edusmart.herokuapp.com/api/class/${id}`
     );
     setClassroom(data.class)
     setIsLoading(false)

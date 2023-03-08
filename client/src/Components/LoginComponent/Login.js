@@ -28,7 +28,7 @@ function Login() {
   const onFormSubmit = (userCredObj) => {
     const sendRequest = async () => {
       isLoading(true);
-      const res = await axios.post(`http://localhost:5000/api/${userType}/login`,
+      const res = await axios.post(`https://edusmart.herokuapp.com/api/${userType}/login`,
         {
           email: userCredObj.email,
           password: userCredObj.password

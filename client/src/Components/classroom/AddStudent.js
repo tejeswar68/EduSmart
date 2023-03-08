@@ -21,7 +21,7 @@ function AddTest() {
         {
             isLoading(true);
             var userId = localStorage.getItem("userId")
-            const res = await axios.post(`http://localhost:5000/api/class/addstudent/${id}`,
+            const res = await axios.post(`https://edusmart.herokuapp.com/api/class/addstudent/${id}`,
             {
                 emailid : obj.emailid
             })

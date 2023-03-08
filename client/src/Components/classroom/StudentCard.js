@@ -6,7 +6,7 @@ const StudentCard = ({ studentId }) => {
 
     async function getStudent(id) {
         const { data } = await axios.get(
-            `http://localhost:5000/api/student/${id}`
+            `https://edusmart.herokuapp.com/api/student/${id}`
         );
         setStudent(data.user)
         console.log(data)

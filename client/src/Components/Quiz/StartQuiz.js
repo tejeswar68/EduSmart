@@ -13,7 +13,7 @@ function StartQuiz() {
     // const [isLoading, setIsLoading] = useState(false);
     // async function getTest(id) {
     //     const { data } = await axios.get(
-    //         `http://localhost:5000/api/test/${id}`
+    //         `https://edusmart.herokuapp.com/api/test/${id}`
     //     );
     //     setTest(data.test.questions)
     //     setIsLoading(true)
@@ -27,7 +27,7 @@ function StartQuiz() {
 
     // async function getQuestions(id) {
     //     const { data } = await axios.get(
-    //         `http://localhost:5000/api/quest/${id}`
+    //         `https://edusmart.herokuapp.com/api/quest/${id}`
     //     );
     //     setQuestions(data)
     //     console.log(data)
