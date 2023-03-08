@@ -40,7 +40,7 @@ if(process.env.NODE_ENV === 'production')
 //
 // ------------deployment--------------
 
-const PORT = process.env.PORT;
- App.listen(PORT||5000,()=>console.log(`server listening on port ${PORT}`));
+const PORT = process.env.PORT||5000;
+ App.listen(PORT,()=>console.log(`server listening on port ${PORT}`));
    
   
